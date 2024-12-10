@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using MongoNet.Contracts.Interfaces.Services;
 using MongoNet.Contracts.Models;
 
 namespace MongoNet.Controllers
@@ -7,28 +8,32 @@ namespace MongoNet.Controllers
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
     {
+        private IWeatherForeCastService _weatherForeCastService { get; set; }
+        private readonly ILogger<WeatherForecastController> _logger;
+
+        public WeatherForecastController(IWeatherForeCastService  weatherForeCastService, ILogger<WeatherForecastController> logger) {
+            _weatherForeCastService = weatherForeCastService;
+            _logger = logger;
+        }
+
         private static readonly string[] Summaries = new[]
         {
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         };
 
-        private readonly ILogger<WeatherForecastController> _logger;
-
-        public WeatherForecastController(ILogger<WeatherForecastController> logger)
-        {
-            _logger = logger;
-        }
+     
+    
 
         [HttpGet(Name = "GetWeatherForecast")]
-        public IEnumerable<Weather> Get()
+        public async Task<IEnumerable<Weather>> Get()
         {
-            return Enumerable.Range(1, 5).Select(index => new Weather
-            {
-                Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-                TemperatureC = Random.Shared.Next(-20, 55),
-                Summary = Summaries[Random.Shared.Next(Summaries.Length)]
-            })
-            .ToArray();
+            return await _weatherForeCastService.GetAll();
+        }
+
+        [HttpPost(Name = "AddWeatherForeCast")]
+        public async Task Add(Weather weather)
+        {
+            await _weatherForeCastService.AddWeatherAsync(weather);
         }
     }
 }

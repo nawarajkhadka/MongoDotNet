@@ -1,6 +1,9 @@
-using Microsoft.Extensions.Configuration;
+using MongoNet.Contracts.Interfaces;
+using MongoNet.Contracts.Interfaces.Services;
 using MongoNet.Contracts.Models;
 using MongoNet.Infra.DataBase;
+using MongoNet.Infra.Implementation;
+using MongoNet.Infra.Implementation.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,6 +23,8 @@ builder.Services.Configure<DatabaseSettings>(
 );
 
 builder.Services.AddSingleton<IMongoDbContext, MongoDbContext>();
+builder.Services.AddSingleton<IWeatherForeCastRepository, WeatherForeCastRepository>();
+builder.Services.AddSingleton<IWeatherForeCastService,WeatherForeCastService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
