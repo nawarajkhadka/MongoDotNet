@@ -1,6 +1,9 @@
-namespace MongoNet
+﻿using MongoNet.Contracts.Database;
+
+
+namespace MongoNet.Contracts.Models
 {
-    public class WeatherForecast
+    public class Weather : DocumentBase
     {
         public DateOnly Date { get; set; }
 

@@ -3,14 +3,7 @@ using MongoDB.Bson.Serialization;
 using MongoDB.Driver;
 using MongoNet.Contracts.Interfaces;
 using MongoNet.Infra.DataBase;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Text.Json;
-using System.Threading.Tasks;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace MongoNet.Infra.Implementation
 {

@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using MongoNet.Contracts.Models;
 
 namespace MongoNet.Controllers
 {
@@ -19,9 +20,9 @@ namespace MongoNet.Controllers
         }
 
         [HttpGet(Name = "GetWeatherForecast")]
-        public IEnumerable<WeatherForecast> Get()
+        public IEnumerable<Weather> Get()
         {
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+            return Enumerable.Range(1, 5).Select(index => new Weather
             {
                 Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
                 TemperatureC = Random.Shared.Next(-20, 55),

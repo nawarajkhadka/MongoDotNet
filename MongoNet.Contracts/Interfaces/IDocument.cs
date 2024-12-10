@@ -1,6 +1,7 @@
-﻿using MongoDB.Bson;
+﻿
+using MongoDB.Bson;
 
-namespace MongoNet.Infra.DataBase
+namespace MongoNet.Contracts.Interfaces
 {
     public interface IDocument
     {
