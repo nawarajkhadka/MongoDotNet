@@ -1,6 +1,6 @@
 # Weather Forecast API with MongoDB in .NET
 
-This repository contains a basic weather forecast API built using MongoDB and .NET. The primary focus is to utilize the `BaseRepository` for performing various CRUD operations, along with text search functionality in MongoDB.
+This repository contains a basic weather forecast API built using MongoDB and .NET. The primary focus is to utilize the `BaseRepository` for performing various CRUD operations, along with text search functionality in MongoDB. 
 
 The API is ready to run for testing, but note that the `Dockerfile` is not updated. Feel free to reuse the `BaseRepository` as required. 
 
@@ -47,4 +47,4 @@ The API is ready to run for testing, but note that the `Dockerfile` is not updat
 
 2. Run the application:
 
-Feel free to explore and expand this repository as needed. 🎉
+Feel free to explore and expand this repository as needed. The dockerfile is not updated. 🎉 
