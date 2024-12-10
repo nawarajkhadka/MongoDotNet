@@ -1,5 +1,9 @@
-This repo contains a basic weather forecast api utilising mongodb in .net. The main idea is to utilise the baserepository for performing different crud operations along with text search in mongodb. Feel free to reuse the baserepository as required. The dockerfile 
-is not updated but the api is runnable to test.
+
+Weather Forecast API with MongoDB in .NET
+
+This repository contains a basic weather forecast API built using MongoDB and .NET. The primary focus is to utilize the BaseRepository for performing various CRUD operations, along with text search functionality in MongoDB.
+
+The API is ready to run for testing, but note that the Dockerfile is not updated. Feel free to reuse the BaseRepository as required.
 
 Features
 1. CRUD Operations
@@ -19,13 +23,18 @@ Requirements
 .NET 6.0 or later
 MongoDB.Driver
 MongoDB.Bson
+Steps to Run Locally
+Update the appsettings.json file with your database configuration:
 
-Steps to run it locally:
-1. Replace appsettings.json section
-   "DatabaseSettings": {
-  "ConnectionString": "mongodb://localhost:27017/", //your connection string
-  "DatabaseName": "weather-forecast" //your database name/ 
+json
+Copy code
+"DatabaseSettings": {
+  "ConnectionString": "mongodb://localhost:27017/", // Replace with your connection string
+  "DatabaseName": "weather-forecast" // Replace with your database name
 }
-2. Run the app MongoNet
+Run the application:
 
-
+bash
+Copy code
+dotnet run --project MongoNet
+Feel free to explore and expand this repository as needed. 🎉
