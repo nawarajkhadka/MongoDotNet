@@ -2,7 +2,7 @@
 
 This repository contains a basic weather forecast API built using MongoDB and .NET. The primary focus is to utilize the `BaseRepository` for performing various CRUD operations, along with text search functionality in MongoDB.
 
-The API is ready to run for testing, but note that the `Dockerfile` is not updated. Feel free to reuse the `BaseRepository` as required.
+The API is ready to run for testing, but note that the `Dockerfile` is not updated. Feel free to reuse the `BaseRepository` as required. 
 
 ---
 
@@ -21,6 +21,7 @@ The API is ready to run for testing, but note that the `Dockerfile` is not updat
 
 ### 3. Text and Regex Search
 - Perform text-based and regex-based searches using MongoDB's powerful search capabilities.
+- Check `BaseRepository=>GetTextSearchResults` 
 
 ### 4. Pipeline Support
 - Build and execute custom MongoDB aggregation pipelines.
